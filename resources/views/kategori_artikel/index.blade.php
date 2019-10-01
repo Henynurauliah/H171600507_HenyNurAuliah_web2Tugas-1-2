@@ -14,17 +14,27 @@
                         <th scope="col">Nama</th>
                         <th scope="col">User_id</th>
                         <th scope="col">Create</th>
+                        <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach( $listKategoriArtikel as $item)
                         <tr>
                         <td>{!! $item->id !!}</td>
                         <td>{!! $item->nama !!}</td>
                         <td>{!! $item->users_id !!}</td>
-                        <td>{!! $item->created_at !!}</td>
+                        <td>{!! $item->created_at->format('d/m/Y H:i:s')!!}</td>
+                        <td>
+                         <a href="{!! route('kategori_artikel.show',[$item->id]) !!}">Lihat</a>
+                        </td>
                         </tr>
-                        @endforeach
+                       @endforeach
                     </tbody>
                 </table>
-		@endsection
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@endsection
