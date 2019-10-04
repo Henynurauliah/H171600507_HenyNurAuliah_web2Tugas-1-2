@@ -8,7 +8,7 @@
                 <div class="card-header">Artikel</div>
                 
                 <div class="card-body">
-                         <div class="form-group row">
+                            <div class="form-group row">
                          <label  class="col-md-4 col-form-label text-md-right">ID</label>
                          <label  class="col-md-8 col-form-label text-md-left">{!! $Artikel->id !!}</label>
                     </div>
