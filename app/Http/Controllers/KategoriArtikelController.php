@@ -24,4 +24,15 @@ class KategoriArtikelController extends Controller
         
     }
 
+    public function create(){
+        return view('kategori_artikel.create');
+    }
+
+    public function store(Request $request) {
+        $input=$request->all();
+
+        KategoriArtikel::create($input);
+
+        return redirect(route('kategori_artikel.index'));
+    }
 }

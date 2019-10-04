@@ -7,12 +7,13 @@
             <div class="card">
                 <div class="card-header">Kategori Artikel</div>
                 <div class="card-body">
+                    <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
                 <table class="table table-bordered">
                     <thead class="bg-warning">
                         <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">User_id</th>
+                        <th scope="col">User Id</th>
                         <th scope="col">Create</th>
                         <th scope="col">Aksi</th>
                         </tr>

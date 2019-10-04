@@ -8,5 +8,9 @@ class Berita extends Model
 {
     protected $table='berita';
 
-    	protected $fillable=['nama','user_id'];
+    	protected $fillable=[
+    		'judul','isi','users_id','kategori_berita_id'
+    	];
+
+    	protected $casts=[ ];
 }
