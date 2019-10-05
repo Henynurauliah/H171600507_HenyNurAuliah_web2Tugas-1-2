@@ -9,7 +9,7 @@ class Galeri extends Model
     protected $table='galeri';
 
     	protected $fillable=[
-    		'nama','isi','users_id','kategori_galeri_id'
+    		'id','nama','keterangan','path','create_at','update_at','users_id','kategori_galeri_id'
     	];
 
     	protected $casts=[ ];

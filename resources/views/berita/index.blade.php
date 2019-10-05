@@ -7,9 +7,15 @@
             <div class="card">
                 <div class="card-header">Berita</div>
                 <div class="card-body">
-                    <a href="{!! route('berita.create') !!}" class="btn btn-primary">Tambah Data</a>
+
+                    <div class="card-body">
+                        <div class="row justify-content-right">
+                            <a href="{!! route('artikel.create') !!}" class="btn btn-info">Tambah Data</a>
+                        </div>
+                    </div>
+
                 <table class="table table-bordered">
-                    <thead class="bg-warning">
+                    <thead class="bg-info">
                         <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Judul</th>
@@ -31,7 +37,7 @@
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
                         <td>
-                         <a href="{!! route('berita.show',[$item->id]) !!}"class="btn btn-success">Lihat</a>
+                         <a href="{!! route('berita.show',[$item->id]) !!}"class="btn btn-info">Lihat</a>
                         </td>
                         </tr>
                        @endforeach
