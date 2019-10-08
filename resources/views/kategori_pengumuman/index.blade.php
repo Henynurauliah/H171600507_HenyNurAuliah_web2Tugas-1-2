@@ -35,9 +35,15 @@
                         <td>{!! $item->created_at->format('d/m/Y H:i:s')!!}</td>
                         <td>{!! $item->updated_at->format('d/m/Y H:i:s')!!}</td>
                         <td>
-                         <a href="{!! route('kategori_pengumuman.show',[$item->id]) !!}" class="btn btn-danger">Lihat</a>
+                         <a href="{!! route('kategori_pengumuman.show',[$item->id]) !!}" class="btn btn-primary">Lihat</a>
 
-                         <a href="{!! route('kategori_pengumuman.edit',[$item->id]) !!}" class="btn btn-danger">Ubah</a>
+                         <a href="{!! route('kategori_pengumuman.edit',[$item->id]) !!}" class="btn btn-success">Ubah</a>
+
+                         {!! Form::open(['route' => ['kategori_pengumuman.destory', $item->id],'method'=>'delete']); !!}
+
+                         {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini ?')"]); !!}
+
+                         {!! Form::close() !!}
                         </td>
                         </tr>
                        @endforeach
