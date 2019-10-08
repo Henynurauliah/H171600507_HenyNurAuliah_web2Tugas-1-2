@@ -74,3 +74,4 @@ Route::patch('/kategori_galeri/{id}','KategoriGaleriController@update')->name('k
 Route::get('/kategori_pengumuman/{id}/edit','KategoriPengumumanController@edit')->name('kategori_pengumuman.edit');
 Route::patch('/kategori_pengumuman/{id}','KategoriPengumumanController@update')->name('kategori_pengumuman.update');
 
+Route::delete('/kategori_artikel/{id}','KategoriArtikelController@destory')->name('kategori_artikel.destory');

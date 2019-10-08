@@ -61,4 +61,15 @@ class KategoriArtikelController extends Controller
       $listKategoriArtikel->update($input);
       return redirect(route('kategori_artikel.index'));
     }
+
+    public function destory($id){
+        $listKategoriArtikel=KategoriArtikel::find($id);
+
+        if (empty($listKategoriArtikel)){
+            return redirect(route ('kategori_artikel.index'));
+        }
+
+        $listKategoriArtikel->delete();
+        return redirect(route('kategori_artikel.index'));
+    }
 }
