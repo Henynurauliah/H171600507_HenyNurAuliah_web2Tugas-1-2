@@ -5,18 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-info" button class="btn btn-primary">Tambah Kategori Artikel</div>
-          
+                <div class="card-header">Tambah Kategori Berita</div>
+
                 <div class="card-body">
-                    {!! Form::open(['route' => 'kategori_artikel.store', 'method' => 'post']) !!}
+                    {!! Form::model($listKategoriBerita, ['route' => ['kategori_berita.update', $listKategoriBerita->id],'method'=>'patch']) !!}
                         
-                        @include('kategori_artikel.form')
+                        @include('kategori_berita.form')
                     
                     {!! Form::close() !!}
-
                 </div>
             </div>
         </div>
      </div>
-</div>
 @endsection

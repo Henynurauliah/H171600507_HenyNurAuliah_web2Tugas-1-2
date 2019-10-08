@@ -35,4 +35,26 @@ class KategoriBeritaController extends Controller
 
         return redirect(route('kategori_berita.index'));
     }
+
+    public function edit($id) {
+        $listKategoriBerita=KategoriBerita::find($id);
+
+        if (empty($listKategoriBerita)){
+            return redirect(route ('kategori_berita.index'));
+        }
+
+        return view('kategori_berita.edit',compact('listKategoriBerita'));
+    }
+
+    public function update($id,Request $request){
+      $listKategoriBerita=KategoriBerita::find($id);
+      $input=$request->all();
+  
+      if(empty($listKategoriBerita)) {
+        return redirect(route('kategori_berita.index'));
+      }
+
+      $listKategoriBerita->update($input);
+      return redirect(route('kategori_berita.index'));
+    }
 }

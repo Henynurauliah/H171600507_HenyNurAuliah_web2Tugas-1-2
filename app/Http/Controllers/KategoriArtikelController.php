@@ -20,6 +20,10 @@ class KategoriArtikelController extends Controller
         //$KategoriArtikel=KategoriArtikel::where('id',$id)->first();
         $listKategoriArtikel=KategoriArtikel::find($id);
 
+        if (empty($listKategoriArtikel)){
+            return redirect(route ('kategori_artikel.index'));
+        }
+
         return view ('kategori_artikel.show', compact('listKategoriArtikel'));
         
     }
@@ -34,5 +38,27 @@ class KategoriArtikelController extends Controller
         KategoriArtikel::create($input);
 
         return redirect(route('kategori_artikel.index'));
+    }
+
+    public function edit($id) {
+        $listKategoriArtikel=KategoriArtikel::find($id);
+
+        if (empty($listKategoriArtikel)){
+            return redirect(route ('kategori_artikel.index'));
+        }
+
+        return view('kategori_artikel.edit',compact('listKategoriArtikel'));
+    }
+
+    public function update($id,Request $request){
+      $listKategoriArtikel=KategoriArtikel::find($id);
+      $input=$request->all();
+  
+      if(empty($listKategoriArtikel)) {
+        return redirect(route('kategori_artikel.index'));
+      }
+
+      $listKategoriArtikel->update($input);
+      return redirect(route('kategori_artikel.index'));
     }
 }
