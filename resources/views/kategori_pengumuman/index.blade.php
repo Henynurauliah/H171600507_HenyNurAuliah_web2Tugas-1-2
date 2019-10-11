@@ -39,7 +39,7 @@
 
                          <a href="{!! route('kategori_pengumuman.edit',[$item->id]) !!}" class="btn btn-success">Ubah</a>
 
-                         {!! Form::open(['route' => ['kategori_pengumuman.destory', $item->id],'method'=>'delete']); !!}
+                         {!! Form::open(['route' => ['kategori_pengumuman.destroy', $item->id],'method'=>'delete']); !!}
 
                          {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini ?')"]); !!}
 

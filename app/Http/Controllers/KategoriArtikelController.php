@@ -62,7 +62,7 @@ class KategoriArtikelController extends Controller
       return redirect(route('kategori_artikel.index'));
     }
 
-    public function destory($id){
+    public function destroy($id){
         $listKategoriArtikel=KategoriArtikel::find($id);
 
         if (empty($listKategoriArtikel)){

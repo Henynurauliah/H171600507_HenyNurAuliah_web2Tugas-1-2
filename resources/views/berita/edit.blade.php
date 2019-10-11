@@ -8,7 +8,7 @@
                 <div class="card-header">Tambah Berita</div>
 
                 <div class="card-body">
-                    {!! Form::open(['route' => 'berita.store', 'method' => 'post']) !!}
+                     {!! Form::model($Berita, ['route' => ['berita.update', $Berita->id],'method'=>'patch']) !!}
                         
                         @include('berita.form')
                     

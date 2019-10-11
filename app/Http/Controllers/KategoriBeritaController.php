@@ -58,7 +58,7 @@ class KategoriBeritaController extends Controller
       return redirect(route('kategori_berita.index'));
     }
 
-    public function destory($id){
+    public function destroy($id){
         $listKategoriBerita=KategoriBerita::find($id);
 
         if (empty($listKategoriBerita)){
@@ -67,5 +67,13 @@ class KategoriBeritaController extends Controller
 
         $listKategoriBerita->delete();
         return redirect(route('kategori_berita.index'));
+    }
+
+    public function trash(){
+        
+        $listKategoriBerita=KategoriBerita::all(); 
+
+        return view ('kategori_berita.index',compact('listKategoriBerita'));
+        //return view ('kategori_berita.index'->with('data',$listKategoriBerita);
     }
 }

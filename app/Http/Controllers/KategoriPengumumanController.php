@@ -58,7 +58,7 @@ class KategoriPengumumanController extends Controller
       return redirect(route('kategori_pengumuman.index'));
     }
 
-    public function destory($id){
+    public function destroy($id){
         $listKategoriPengumuman=KategoriPengumuman::find($id);
 
         if (empty($listKategoriPengumuman)){
@@ -67,5 +67,13 @@ class KategoriPengumumanController extends Controller
 
         $listKategoriPengumuman->delete();
         return redirect(route('kategori_pengumuman.index'));
+    }
+
+    public function trash(){
+        
+        $listKategoriPengumuman=KategoriPengumuman::all(); 
+
+        return view ('kategori_pengumuman.index',compact('listKategoriPengumuman'));
+        //return view ('kategori_pengumuman.index'->with('data',$listKategoriPengumuman);
     }
 }

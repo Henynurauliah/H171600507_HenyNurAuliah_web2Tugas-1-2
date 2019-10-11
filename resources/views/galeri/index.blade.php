@@ -24,6 +24,7 @@
                         <th scope="col">Kategori</th>
                         <th scope="col">Users Id</th>
                         <th scope="col">Create</th>
+                        <th scope="col">Update</th>
                         <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -38,8 +39,18 @@
                         <td>{!! $item->kategori_galeri_id !!}</td>
                         <td>{!! $item->users_id !!}</td>
                         <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                        <td>{!! $item->updated_at->format('d/m/Y H:i:s')!!}</td>
                         <td>
                          <a href="{!! route('galeri.show',[$item->id]) !!}"class="btn btn-warning">Lihat</a>
+
+                         <a href="{!! route('galeri.edit',[$item->id]) !!}" class="btn btn-sm btn-info">
+                         Ubah</a>
+
+                         {!! Form::open(['route' => ['galeri.destroy', $item->id],'method'=>'delete']); !!}
+
+                         {!! Form::submit('Hapus', ['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini ?')"]); !!}
+
+                         {!! Form::close() !!}
                         </td>
                         </tr>
                        @endforeach

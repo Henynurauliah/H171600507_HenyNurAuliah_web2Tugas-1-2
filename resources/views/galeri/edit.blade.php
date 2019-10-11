@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Berita</div>
+                <div class="card-header">Tambah Galeri</div>
 
                 <div class="card-body">
-                    {!! Form::open(['route' => 'berita.store', 'method' => 'post']) !!}
+                    {!! Form::model($Galeri, ['route' => ['galeri.update', $Galeri->id],'method'=>'patch']) !!}
                         
-                        @include('berita.form')
+                        @include('galeri.form')
                     
                     {!! Form::close() !!}
                 </div>
@@ -25,7 +25,7 @@
 
         <script>
                 $(document).ready(function() {
-                 CKEDITOR.replace( 'isi' );
+                 CKEDITOR.replace( 'keterangan' );
 
 
                 });

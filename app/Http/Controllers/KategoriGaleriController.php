@@ -58,7 +58,7 @@ class KategoriGaleriController extends Controller
       return redirect(route('kategori_galeri.index'));
     }
 
-    public function destory($id){
+    public function destroy($id){
         $listKategoriGaleri=KategoriGaleri::find($id);
 
         if (empty($listKategoriGaleri)){
@@ -67,5 +67,13 @@ class KategoriGaleriController extends Controller
 
         $listKategoriGaleri->delete();
         return redirect(route('kategori_galeri.index'));
+    }
+
+    public function trash(){
+        
+        $listKategoriGaleri=KategoriGaleri::all(); 
+
+        return view ('kategori_galeri.index',compact('listKategoriGaleri'));
+        //return view ('kategori_galeri.index'->with('data',$listKategoriGaleri);
     }
 }
