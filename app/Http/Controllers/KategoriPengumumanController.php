@@ -71,7 +71,9 @@ class KategoriPengumumanController extends Controller
 
     public function trash(){
         
-        $listKategoriPengumuman=KategoriPengumuman::all(); 
+        $listKategoriPengumuman=KategoriPengumuman::onlyTrashed()
+                            ->WhereNotNull('deleted_at')
+                            ->get();
 
         return view ('kategori_pengumuman.index',compact('listKategoriPengumuman'));
         //return view ('kategori_pengumuman.index'->with('data',$listKategoriPengumuman);

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+    @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -7,11 +7,13 @@
             <div class="card">
                 <div class="card-header">Kategori Artikel</div>
                 <div class="card-body">
-
                     <div class="card-body">
                         <div class="row justify-content-right">
-                            <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
-                        </div>
+                            <a href="{!! route('kategori_artikel.create') !!}" class="btn btn-primary">Tambah Data</a> 
+                            
+                            <a href="{!! route('kategori_artikel.trash') !!}" class="btn btn-danger">
+                         See delete data</a>
+                         </div>
                     </div>
 
                 <table class="table table-bordered">

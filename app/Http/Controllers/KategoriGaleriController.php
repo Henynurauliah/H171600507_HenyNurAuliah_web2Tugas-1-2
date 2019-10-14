@@ -71,7 +71,9 @@ class KategoriGaleriController extends Controller
 
     public function trash(){
         
-        $listKategoriGaleri=KategoriGaleri::all(); 
+        $listKategoriGaleri=KategoriGaleri::onlyTrashed()
+                            ->WhereNotNull('deleted_at')
+                            ->get();
 
         return view ('kategori_galeri.index',compact('listKategoriGaleri'));
         //return view ('kategori_galeri.index'->with('data',$listKategoriGaleri);

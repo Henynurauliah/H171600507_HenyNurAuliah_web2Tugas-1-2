@@ -10,7 +10,9 @@
 
                      <div class="card-body">
                         <div class="row justify-content-right">
-                            <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-danger">Tambah Data</a>
+                            <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-warning">Tambah Data</a>
+                            <a href="{!! route('kategori_pengumuman.trash') !!}" class="btn btn-danger">
+                         See delete data</a>
                         </div>
                     </div>
 

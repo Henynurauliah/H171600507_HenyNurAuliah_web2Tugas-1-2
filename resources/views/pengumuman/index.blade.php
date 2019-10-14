@@ -11,6 +11,7 @@
                     <div class="card-body">
                         <div class="row justify-content-right">
                             <a href="{!! route('pengumuman.create') !!}" class="btn btn-danger">Tambah Data</a>
+                            <a href="{!! route('pengumuman.trash') !!}" class="btn btn-success">See delete data</a>
                         </div>
                     </div>
 

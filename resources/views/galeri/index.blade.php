@@ -10,7 +10,8 @@
 
                     <div class="card-body">
                         <div class="row justify-content-right">
-                            <a href="{!! route('galeri.create') !!}" class="btn btn-warning">Tambah Data</a>
+                        <a href="{!! route('galeri.create') !!}" class="btn btn-warning">Tambah Data</a>
+                        <a href="{!! route('galeri.trash') !!}" class="btn btn-danger">
                         </div>
                     </div>
 

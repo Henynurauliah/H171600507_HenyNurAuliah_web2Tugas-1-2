@@ -11,6 +11,9 @@
                     <div class="card-body">
                         <div class="row justify-content-right">
                             <a href="{!! route('kategori_berita.create') !!}" class="btn btn-warning">Tambah Data</a>
+                            
+                            <a href="{!! route('kategori_berita.trash') !!}" class="btn btn-danger">
+                         See delete data</a>
                         </div>
                     </div>
 

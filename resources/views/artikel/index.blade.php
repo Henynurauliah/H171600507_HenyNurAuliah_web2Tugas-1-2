@@ -11,6 +11,9 @@
                     <div class="card-body">
                         <div class="row justify-content-right">
                             <a href="{!! route('artikel.create') !!}" class="btn btn-primary">Tambah Data</a>
+                            
+                            <a href="{!! route('artikel.trash') !!}" class="btn btn-danger">
+                         See delete data</a>
                         </div>
                     </div>
 
